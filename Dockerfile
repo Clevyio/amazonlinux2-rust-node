@@ -12,7 +12,7 @@ RUN curl -sL https://rpm.nodesource.com/setup_12.x | bash - && \
 RUN npm i -g neon-cli
 
 # Install dependencies
-RUN yum install -y make gcc gcc-c++ libgcc openssl-devel readline-devel sqlite-devel \
+RUN yum install -y git make gcc gcc-c++ libgcc openssl-devel readline-devel sqlite-devel \
  && yum clean all
 
 RUN rm -rf /var/cache/yum

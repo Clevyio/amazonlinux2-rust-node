@@ -2,7 +2,7 @@ FROM amazonlinux:latest
 
 # Install rust
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable && \
-    PATH="/root/.cargo/bin:$PATH" rustup install 1.56.0
+    PATH="/root/.cargo/bin:$PATH" rustup install 1.56.1
 ENV PATH $PATH:/root/.cargo/bin
 
 # Install node

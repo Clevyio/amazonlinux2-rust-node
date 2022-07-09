@@ -13,4 +13,10 @@ RUN curl -sL https://rpm.nodesource.com/setup_16.x | bash - && \
 RUN yum install -y git make gcc gcc-c++ libgcc openssl-devel readline-devel sqlite-devel libpq-dev \
  && yum clean all
 
+# Install Python 3.8 (required >=3.6 for neon-sys)
+RUN amazon-linux-extras enable python3.8
+RUN yum clean metadata
+RUN yum install -y python38 && yum clean all
+RUN mv /bin/python3.8 /bin/python3
+
 RUN rm -rf /var/cache/yum
